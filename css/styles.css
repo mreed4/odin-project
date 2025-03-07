@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Raleway:wght@100;200;600&display=swap");
+/**/
+
+:root {
+  --lighter: hsl(0, 0%, 100%, 0.9);
+  --light: hsl(0, 0%, 100%, 0.2);
+  --darker: hsl(0, 0%, 0%, 0.4);
+  --dark: hsl(0, 0%, 0%, 0.2);
+
+  /* https://coolors.co/palette/227c9d-17c3b2-ffcb77-fef9ef-fe6d73 */
+  --yellow: hsl(42, 100%, 70%);
+  --green: hsl(164.4, 94.5%, 43.1%);
+  --red: hsl(345.7, 84%, 60.8%);
+  --cg-blue: hsl(196.1, 64.4%, 37.5%);
+  --cg-blue-d: hsl(196, 63.8%, 18.4%);
+  --cg-blue-l: hsl(195.9, 64.2%, 55.1%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/**/
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  line-height: 1;
+  background-color: hsl(216, 18.1%, 16.3%);
+  user-select: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+header,
+main {
+  width: 700px;
+  margin: 0 auto;
+}
+
+section {
+  margin: 3em 0;
+}
+
+h1,
+h2 {
+  color: var(--lighter);
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 325%;
+  margin: 1em auto 0.25em;
+}
+
+h2 {
+  font-size: 200%;
+  margin: 0 auto 1em;
+}
+
+p {
+  color: var(--lighter);
+  text-align: center;
+  font-size: 125%;
+  line-height: 32px;
+}
+
+hr {
+  height: 2px;
+  background-color: var(--light);
+  margin: 0.25em auto;
+}
+
+hr.hr-large {
+  width: 55%;
+}
+
+input[type="button"] {
+  border-style: solid;
+  margin: 0 auto;
+  border-width: 0;
+  border-bottom-width: 4px;
+  padding: 9px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.25em;
+
+  background-color: hsl(216, 18.1%, 16.3%);
+  color: var(--lighter);
+  border-bottom-color: hsl(216, 18.1%, 5.3%);
+}
+
+input[type="button"]:active {
+  border-bottom-width: 2px;
+  transform: translateY(2px);
+}
+
+input[type="button"]:hover {
+  background-color: hsl(216, 18.1%, 25.3%);
+}
+
+/**/
+
+#description p > span {
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+.em.larger {
+  /* Custom emojis */
+  margin: 0 0.5em;
+  font-size: 300%;
+}
+
+.player-choice {
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+
+.player-choice:hover {
+  transform: scale(1.2);
+}
+
+#hands {
+  display: flex;
+  justify-content: space-between;
+}
+
+#round-outcome {
+  margin: 2em auto;
+  font-size: 200%;
+  font-weight: 200;
+}
+
+#results-round {
+  visibility: hidden;
+}
+
+#game-outcome {
+  margin: 3em auto;
+  font-size: 200%;
+  font-weight: 600;
+  color: var(--darker);
+}
+
+#results-game {
+  display: none;
+}
+
+#stats {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--lighter);
+  font-size: 125%;
+}
+
+.stat {
+  font-weight: 200;
+}
+
+.stat > span {
+  display: block;
+  font-size: 200%;
+  margin-top: 0.25em;
+  font-family: "Fira Code", monospace;
+  font-weight: initial;
+}
+
+#btn-again {
+  visibility: hidden;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation-name: pop;
+  animation-duration: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
