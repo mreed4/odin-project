@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>rockPaperScissors.js</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://emoji-css.afeld.me/emoji.css" />
+
+    <script src="js/scripts.js" async></script>
+    <!--https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup-->
+  </head>
+
+  <body>
+    <header>
+      <h1>rockPaperScissors.js</h1>
+      <hr class="hr-large" />
+    </header>
+    <main>
+      <section id="description">
+        <p>This is the classic rock paper scissors game. First to <span id="score-to-win">0</span> wins.</p>
+      </section>
+      <section id="hands">
+        <div>
+          <h2>Player Hand</h2>
+          <div>
+            <i class="em larger em-gem player-choice"></i>
+            <i class="em larger em-newspaper player-choice"></i>
+            <i class="em larger em-scissors player-choice"></i>
+          </div>
+        </div>
+        <div>
+          <h2>Computer Hand</h2>
+          <div id="computer-choice">
+            <i class="em larger em-question"></i>
+          </div>
+        </div>
+      </section>
+      <section id="results-round">
+        <div id="round-outcome">Results</div>
+      </section>
+      <section id="results-game">
+        <div id="game-outcome"></div>
+      </section>
+      <section id="stats">
+        <div class="stat">Rounds played<span id="rounds-played">0</span></div>
+        <div class="stat">Player wins<span id="player-wins">0</span></div>
+        <div class="stat">Computer wins<span id="computer-wins">0</span></div>
+        <div class="stat">Draws<span id="draws">0</span></div>
+      </section>
+      <section id="buttons">
+        <input type="button" id="btn-again" value="Play Again" />
+      </section>
+    </main>
+  </body>
+</html>
