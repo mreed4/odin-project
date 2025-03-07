@@ -1,0 +1,241 @@
+:root {
+  /* 
+  
+  HTML5 element: range */
+  /* https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+
+  /* RESETS */
+  --range-webkit-appearance: none;
+  --range-background: transparent;
+  --range-outline: none;
+  --range-cursor: pointer;
+  --range-border-color: transparent;
+  --range-color: transparent;
+  --range-width: 60%;
+
+  /* CUSTOM */
+
+  /* The "dial" */
+  --range-thumb-custom-border: 2px solid gainsboro;
+  --range-thumb-custom-height: 16px;
+  --range-thumb-custom-width: var(--range-thumb-custom-height);
+  --range-thumb-custom-border-radius: 2em;
+  --range-thumb-custom-cursor: pointer;
+  --range-thumb-custom-background: white;
+  --range-thumb-custom-box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+
+  /* The track the "dial" sits on */
+  --range-track-custom-width: var(--range-width);
+  --range-track-custom-height: 4px;
+  --range-track-custom-cursor: pointer;
+  --range-track-custom-background: rgb(59, 68, 76);
+  --range-track-custom-background-focus: rgb(59, 68, 76);
+  --range-track-custom-border-radius: 1em;
+  --range-track-custom-border-bottom: 1px solid rgba(178, 203, 229, 0.8);
+
+  /* 
+  
+  HTML5 element: checkbox */
+  /* https://codepen.io/bbodine1/pen/DqdMRy */
+
+  /* The "dial" */
+  --checkbox-toggle-custom-height: var(--range-thumb-custom-height);
+  --checkbox-toggle-custom-width: var(--checkbox-toggle-custom-height);
+  --checkbox-toggle-custom-border-radius: var(--range-thumb-custom-border-radius);
+  --checkbox-toggle-custom-border: var(--range-thumb-custom-border);
+  --checkbox-toggle-custom-box-shadow: var(--range-thumb-custom-box-shadow);
+
+  /* The track */
+  --checkbox-track-custom-height: var(--range-track-custom-height);
+  --checkbox-track-custom-background: var(--range-track-custom-background);
+  --checkbox-track-custom-border-bottom: var(--range-track-custom-border-bottom);
+}
+
+/* 
+
+RANGE
+
+RESETS */
+
+input[type="range"] {
+  -webkit-appearance: var(--range-webkit-appearance); /* Hides the slider so that custom slider can be made */
+  width: var(--range-width); /* Specific width is required for Firefox. */
+  background: var(--range-background); /* Otherwise white in Chrome */
+  display: block;
+  margin: 1.5em 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: var(--range-webkit-appearance);
+}
+
+input[type="range"]:focus {
+  outline: var(--range-outline);
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: var(--range-width);
+  cursor: var(--range-cursor);
+
+  /* Hides the slider so custom styles can be added */
+  background: var(--range-background);
+  border-color: var(--range-border-color);
+  color: var(--range-color);
+}
+
+/* 
+
+RANGE
+
+BEGIN CUSTOM STYLING */
+
+/* The "dial" */
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: var(--range-webkit-appearance);
+
+  box-shadow: var(--range-thumb-custom-box-shadow);
+  border: var(--range-thumb-custom-border);
+  height: var(--range-thumb-custom-height);
+  width: var(--range-thumb-custom-width);
+  border-radius: var(--range-thumb-custom-border-radius);
+  background: var(--range-thumb-custom-background);
+  cursor: var(--range-thumb-custom-cursor);
+
+  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-shadow: var(--range-thumb-custom-box-shadow);
+  border: var(--range-thumb-custom-border);
+  height: var(--range-thumb-custom-height);
+  width: var(--range-thumb-custom-width);
+  border-radius: var(--range-thumb-custom-border-radius);
+  background: var(--range-thumb-custom-background);
+  cursor: var(--range-thumb-custom-cursor);
+}
+
+input[type="range"]::-ms-thumb {
+  box-shadow: var(--range-thumb-custom-box-shadow);
+  border: var(--range-thumb-custom-border);
+  height: var(--range-thumb-custom-height);
+  width: var(--range-thumb-custom-width);
+  border-radius: var(--range-thumb-custom-border-radius);
+  background: var(--range-thumb-custom-background);
+  cursor: var(--range-thumb-custom-cursor);
+}
+
+/* The track */
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: var(--range-track-custom-width);
+  height: var(--range-track-custom-height);
+  cursor: var(--range-track-custom-cursor);
+  background: var(--range-track-custom-background);
+  border-radius: var(--range-track-custom-border-radius);
+  border-bottom: var(--range-track-custom-border-bottom);
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: var(--range-track-custom-background-focus);
+}
+
+input[type="range"]::-moz-range-track {
+  width: var(--range-track-custom-width);
+  height: var(--range-track-custom-height);
+  height: var(--range-track-custom-height);
+  background: var(--range-track-custom-background);
+  border-radius: var(--range-track-custom-border-radius);
+
+  border-bottom: var(--range-track-custom-border-bottom);
+}
+
+/* MS stuff */
+
+input[type="range"]::-ms-track {
+  width: var(--range-track-custom-width);
+  height: var(--range-track-custom-height);
+  height: var(--range-track-custom-height);
+
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  border-width: 16px 0;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: var(--range-track-custom-background);
+  border-radius: var(--range-track-custom-border-radius);
+
+  border-bottom: var(--range-track-custom-border-bottom);
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: var(--range-track-custom-background-focus);
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: var(--range-track-custom-background);
+  border-radius: var(--range-track-custom-border-radius);
+
+  border-bottom: var(--range-track-custom-border-bottom);
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: var(--range-track-custom-background-focus);
+}
+
+/* 
+
+RANGE
+
+RESETS */
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+/* 
+
+CHECKBOX
+
+BEGIN CUSTOM STYLING */
+
+/* This is the track */
+
+#settings-and-desc > div:nth-child(4) > div:nth-child(2) {
+  width: 1.5em;
+  height: var(--checkbox-track-custom-height);
+  height: 4px;
+  background: var(--checkbox-track-custom-background);
+  border-bottom: var(--checkbox-track-custom-border-bottom);
+  margin-top: 6px;
+  position: relative;
+  border-radius: 1em;
+}
+
+/* This is the "dial" */
+
+#settings-and-desc > div:nth-child(4) > div:nth-child(2) label {
+  width: var(--checkbox-toggle-custom-width);
+  height: var(--checkbox-toggle-custom-height);
+  border-radius: var(--checkbox-toggle-custom-border-radius);
+  box-shadow: var(--checkbox-toggle-custom-box-shadow);
+  border: var(--checkbox-toggle-custom-border);
+  display: inline-block;
+  /* transition: left 150ms ease; */
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  cursor: pointer;
+  background: white;
+}
+
+#settings-and-desc > div:nth-child(4) > div:nth-child(2) label > span {
+  visibility: hidden;
+}
+
+#settings-and-desc > div:nth-child(4) input[type="checkbox"]:checked + label {
+  left: 12px;
+}

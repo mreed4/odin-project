@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>etch-a-sketch.js</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="js/scripts.js" async></script>
+    <!--https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup-->
+  </head>
+
+  <body>
+    <main>
+      <section id="etch-a-sketch">
+        <div class="product-name-wrapper">
+          <span class="second-name product-name-item">Magic</span>
+          <span class="product-name product-name-item" data-text="Etch A Sketch">Etch A Sketch</span>
+          <span class="second-name product-name-item">Screen</span>
+        </div>
+        <div class="screen-inset">
+          <div id="screen"></div>
+        </div>
+      </section>
+      <section id="settings-and-desc">
+        <div id="desc">
+          <h1>etch-a-sketch.js</h1>
+          <p>
+            This little project is <em>inspired by</em> the classic toy from the 1950s. Put your mouse over the gray "screen" to the left.
+            There are no dials to turn.
+          </p>
+        </div>
+
+        <h2>Settings</h2>
+
+        <div>
+          <label for="grid-size">Grid size</label>
+          <div id="range-wrapper">
+            <input type="range" id="grid-size" name="grid-size" min="3" max="6" value="4" />
+            <span id="size-screen"></span>
+          </div>
+        </div>
+
+        <div class="partymode-wrapper">
+          <div id="partymode-pseudo-label">Partymode</div>
+          <div>
+            <input type="checkbox" id="partymode" name="partymode" />
+            <label for="partymode"><span>Partymode</span></label>
+          </div>
+        </div>
+
+        <div id="buttons">
+          <!--
+          <button type="submit" id="submit-button">Submit</button>
+        -->
+          <button type="reset" id="reset-button">Clear Screen</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
